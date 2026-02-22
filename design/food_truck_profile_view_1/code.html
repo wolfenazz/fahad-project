@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Food Truck Profile View</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e0150b",
+                        "background-light": "#f8f6f5",
+                        "background-dark": "#221110",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<!-- Header / Hero Section -->
+<div class="relative w-full h-[320px] @container">
+<div class="absolute inset-0 bg-center bg-cover bg-no-repeat" data-alt="A vibrant red gourmet burger food truck parked on a city street" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA7_EI_f93IjgzhYJdlfQQpWXlFgr0Rsn7QXVvsfg4BGh80TJ_wVF118nLThcRG-ZW0uRG5InDFjd9LgKIK9fE9s7WlhL0EIM7BpAmnQ3otPT5-qU9rAlL92aolgOlIVjC5FgD3jlIVe555hji4qOJVXmnHTeZX99jypW1rrAko7geI7ZLL1OcrVdRy8-AOUDzHxTzROY5H5UDI3ZFemgMpXLt2Izq-0dHMP5TZjl7mfkuhbzXXtDFFvmxbs2_E3fgFp2t0ihC3-0Q');">
+<div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60"></div>
+</div>
+<!-- Navigation Overlays -->
+<div class="absolute top-0 left-0 right-0 p-4 flex justify-between items-center z-10">
+<button class="size-10 flex items-center justify-center bg-white/20 backdrop-blur-md rounded-full text-white">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+<div class="flex gap-2">
+<button class="size-10 flex items-center justify-center bg-white/20 backdrop-blur-md rounded-full text-white">
+<span class="material-symbols-outlined">share</span>
+</button>
+<button class="size-10 flex items-center justify-center bg-white rounded-full text-primary shadow-lg">
+<span class="material-symbols-outlined font-fill">favorite</span>
+</button>
+</div>
+</div>
+<!-- Hero Bottom Info -->
+<div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 bg-green-500 text-[10px] font-bold uppercase rounded tracking-wider">Open Now</span>
+<span class="px-2 py-0.5 bg-primary text-[10px] font-bold uppercase rounded tracking-wider">Top Rated</span>
+</div>
+<h1 class="text-3xl font-bold tracking-tight">The Sizzle Station</h1>
+<div class="flex items-center gap-1 mt-1 opacity-90">
+<span class="material-symbols-outlined text-sm">stars</span>
+<span class="text-sm font-semibold">4.9</span>
+<span class="text-sm opacity-75">(2.4k reviews) • Gourmet Burgers</span>
+</div>
+</div>
+</div>
+<!-- Main Content -->
+<main class="relative -mt-4 bg-background-light dark:bg-background-dark rounded-t-xl px-4 pt-6 pb-24 space-y-6">
+<!-- Action Buttons -->
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center justify-center gap-2 bg-primary text-white font-bold py-3.5 rounded-xl shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">menu_book</span>
+                View Menu
+            </button>
+<button class="flex items-center justify-center gap-2 bg-primary/10 text-primary font-bold py-3.5 rounded-xl">
+<span class="material-symbols-outlined">calendar_today</span>
+                Schedule
+            </button>
+</div>
+<!-- Description -->
+<section class="space-y-2">
+<h2 class="text-lg font-bold text-slate-900 dark:text-slate-100">About the Truck</h2>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
+                Serving up the city's most legendary smash burgers using locally-sourced wagyu beef and our secret "Sizzle Sauce". Find us daily at rotating hotspots across the downtown area.
+            </p>
+</section>
+<!-- Location Widget -->
+<section class="p-4 bg-white dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+<div class="flex items-start justify-between">
+<div class="flex gap-3">
+<div class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<p class="font-bold text-sm">Current Location</p>
+<p class="text-slate-500 text-xs mt-0.5">Arts District, 452 Broadway Ave</p>
+<p class="text-primary text-[10px] font-medium mt-1 uppercase tracking-tighter italic">Until 10:00 PM tonight</p>
+</div>
+</div>
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-xs font-bold shadow-md">
+                    Navigate
+                </button>
+</div>
+<!-- Mini Map Placeholder -->
+<div class="mt-4 h-32 w-full rounded-lg bg-slate-100 overflow-hidden relative" data-location="Arts District New York" style="">
+<div class="absolute inset-0 bg-cover bg-center opacity-80" data-alt="A stylized street map view of a city district" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDG2OcV4G9nKxvpdIV7Tm1zzAbc4roIPe6aBWofsPMzwwMnCV1Mccv-YoWTw2hs0MnaHVhwyjH3tMAlmFBuDqcY9RIgNkZdD6k6yRRvLluv3cyPEVK0Itwc_JKtZK22Ch6Q5pgRQr_V3x76NdDz0BepIuFyXx1PWxGGSu8GF3xSw-ZeeZwfXPZVXfLhx9JiBircOyaR8SvGWPuV64RuxoGEOs73Juk32z8RsnExFf8Mk4_GxLPRjbhFqmXNJWSVe32-SwB919tKUq8');"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="size-8 bg-primary rounded-full border-2 border-white shadow-xl animate-pulse flex items-center justify-center">
+<div class="size-2 bg-white rounded-full"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Food Gallery -->
+<section class="space-y-3">
+<div class="flex justify-between items-end">
+<h2 class="text-lg font-bold">Food Gallery</h2>
+<button class="text-primary text-sm font-semibold">See all</button>
+</div>
+<div class="flex gap-3 overflow-x-auto hide-scrollbar -mx-4 px-4">
+<div class="shrink-0 w-40 h-40 rounded-xl overflow-hidden bg-slate-200">
+<img alt="Double wagyu cheeseburger with dripping sauce" class="w-full h-full object-cover" data-alt="Close up shot of a juicy double cheeseburger" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHLLQrsKl8WvesyOxYKi-W30929fjp2p-vWuqoV6xgBo1Pr_LSDeaX6mb1Z3IPRWOoZMAFYlBabNRfonETe5UOxSI4LTIkJzSpHe0aasmWrgDbY2CbeQScno5_iIcPnmHZrjt49R6thQ7Y7uWRFEmkVGXb9E0aJtyOV_UAAsJTpteIJ8O4QotqgF8r1hbpvq46B3paoLi8UxLWBKJrJdX06cKCaPyOigf_Ijr3-MrcRW0RXWzdRg4NLGBawPlsyJrzEhgy5OOb72c"/>
+</div>
+<div class="shrink-0 w-40 h-40 rounded-xl overflow-hidden bg-slate-200">
+<img alt="Truffle parmesan fries in a basket" class="w-full h-full object-cover" data-alt="Golden crispy french fries seasoned with herbs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1wf07-j6-IVcKCpaqWq47IlIT1pe35FM4WJob75GcUFCMeUSm96ThYzTxDOddq5KId2Ce7WBr8gxL-UKhOUEIzUpYWEuSJoaP4Ug9SNu2BmD3cOXqsK6vJRmLTxtwmnA30RgT94TEIf-tIycVf8evl0CuVZermw7flICfHERBQB34_xYHFV_wGR_OlzF-9IzJviX9JQLfAHrKkMnmA7zvJg9XWM5EvrYMb5QmbpOmOWN1djjwaNvXUd9SE9toQnWJ24CPozndjs4"/>
+</div>
+<div class="shrink-0 w-40 h-40 rounded-xl overflow-hidden bg-slate-200">
+<img alt="Spicy chicken sandwich with coleslaw" class="w-full h-full object-cover" data-alt="Delicious fried chicken sandwich on a brioche bun" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDS0nYv3V1SnMqgsGRq_xOm3fmVy6GfKt1wvXcsL_SLDzF_2WSBXwzxztAeV-IQs5eJSuW7mjRhO-lFIY9bqMNk4WlKsAJwYjJvaW5Fm_NutNnXe7E-Z1R88zkyXaoT2TB120-uBdFPqHevPPkvnT9SRoZX3WUMcMRl_0roEs1oG2w19EdGW_29JPV6UgWWE-XLpZTeU9mjAlLS3qXtUw0Gi-am_ZjYxd1mkLo1MnJmwnruhFpheYtRjWdRVyBUNdjwigTG-iHBSQg"/>
+</div>
+</div>
+</section>
+<!-- Reviews Section -->
+<section class="space-y-4">
+<div class="flex justify-between items-end">
+<h2 class="text-lg font-bold">Reviews</h2>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-500 text-sm font-fill">star</span>
+<span class="text-sm font-bold">4.9</span>
+</div>
+</div>
+<!-- Review List -->
+<div class="space-y-4">
+<div class="p-4 bg-white dark:bg-slate-800/50 rounded-xl border border-slate-100 dark:border-slate-700">
+<div class="flex justify-between mb-2">
+<div class="flex items-center gap-2">
+<div class="size-8 rounded-full bg-slate-200 border border-slate-300 overflow-hidden">
+<img alt="User avatar" class="w-full h-full object-cover" data-alt="Profile picture of a male customer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsMuSEUgbJWdMQ7fj0H-3AYC32Vp324uwub_2UinjcBL2RRmpcBgjTNiAMPlvfMV6-iTrQIr_mWDdSpAEuaTHYRg5RpAlTPzYQBkejIIOUCu6BrYicXt0qKLhlfI_N0-f5kpNVy5y4w0yhgaea_nxEfk-Vq7ZJ6R2x_II5WE2DumpG9VQodkoKEh6y_pw0yklwPSZyHwJhYGPeO0PlBLe0EBzvfVaG6fmW-DwyHpmYWj1z3SYHHatcUWUxxxhve51IvJgbVhG7is8"/>
+</div>
+<div>
+<p class="text-sm font-bold">Mark Johnson</p>
+<p class="text-[10px] text-slate-400">2 days ago</p>
+</div>
+</div>
+<div class="flex text-yellow-500">
+<span class="material-symbols-outlined text-xs font-fill">star</span>
+<span class="material-symbols-outlined text-xs font-fill">star</span>
+<span class="material-symbols-outlined text-xs font-fill">star</span>
+<span class="material-symbols-outlined text-xs font-fill">star</span>
+<span class="material-symbols-outlined text-xs font-fill">star</span>
+</div>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400 italic">"Best burger I've had in years. The Sizzle Sauce is actually magic. Highly recommend the Double Wagyu!"</p>
+</div>
+<div class="p-4 bg-white dark:bg-slate-800/50 rounded-xl border border-slate-100 dark:border-slate-700">
+<div class="flex justify-between mb-2">
+<div class="flex items-center gap-2">
+<div class="size-8 rounded-full bg-slate-200 border border-slate-300 overflow-hidden">
+<img alt="User avatar" class="w-full h-full object-cover" data-alt="Profile picture of a female customer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPU2tMP-hrHljRQwsz7eZexTGl5swz9DJuFNrGkb_58GQX58l8PaZMx2N-pzh7DxF33h40oEhNy_A_5p6Or0sRBQgD9J7kXX-Gd-ZCYx7DvuU8er_XsEWMm85H8nVTUPZ6s3whK7_pjXeQ4N4rtsTd9tZlmNn5biKs3Wa5gnEKYIE_4H__JHj8NSc4S0y2nx5-Gy_ddodhXE1xUy3Q-6BMHybg74A4IkAgWHOk1OLfnclogrS4KSdc8bGSpxgrlWDf8OpjVetaDNk"/>
+</div>
+<div>
+<p class="text-sm font-bold">Sarah Chen</p>
+<p class="text-[10px] text-slate-400">1 week ago</p>
+</div>
+</div>
+<div class="flex text-yellow-500">
+<span class="material-symbols-outlined text-xs font-fill">star</span>
+<span class="material-symbols-outlined text-xs font-fill">star</span>
+<span class="material-symbols-outlined text-xs font-fill">star</span>
+<span class="material-symbols-outlined text-xs font-fill">star</span>
+<span class="material-symbols-outlined text-xs font-fill">star_half</span>
+</div>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400 italic">"Fries were amazing! A bit of a wait but totally worth it for the quality."</p>
+</div>
+</div>
+<button class="w-full py-3 border border-slate-200 dark:border-slate-700 rounded-xl text-sm font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                View all 2,431 reviews
+            </button>
+</section>
+</main>
+<!-- Bottom Nav Bar -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-background-dark/80 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800 px-6 py-3 pb-8 z-50">
+<div class="max-w-md mx-auto flex justify-between items-center">
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="text-[10px] font-medium">Explore</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined font-fill">favorite</span>
+<span class="text-[10px] font-medium">Favorites</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>

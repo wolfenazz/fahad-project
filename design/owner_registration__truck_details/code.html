@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Owner Registration: Truck Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e0150b",
+                        "primary-hover": "#c01209",
+                        "primary-soft": "#fcecea",
+                        "background-light": "#fcf8f8",
+                        "background-dark": "#221110",
+                        "neutral-surface": "#ffffff",
+                        "neutral-border": "#e8d0ce",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "2xl": "1.5rem",
+                        "full": "9999px",
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hide for cleaner mobile look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased text-slate-900 dark:text-slate-100 min-h-screen flex flex-col items-center justify-start">
+<!-- Mobile Container -->
+<div class="w-full max-w-md bg-background-light dark:bg-background-dark min-h-screen flex flex-col relative shadow-xl overflow-hidden">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-20 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-neutral-border/50">
+<div class="flex items-center justify-between px-4 py-3">
+<button class="flex items-center justify-center p-2 -ml-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-900 dark:text-white" type="button">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+<h1 class="text-lg font-bold text-center flex-1 pr-8 text-slate-900 dark:text-white">Truck Details</h1>
+</div>
+<!-- Progress Bar -->
+<div class="px-6 pb-4 pt-1">
+<div class="flex justify-between items-end mb-2">
+<span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Step 2 of 2</span>
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">Finalize Profile</span>
+</div>
+<div class="h-2 w-full bg-neutral-border rounded-full overflow-hidden">
+<div class="h-full bg-primary w-full rounded-full transition-all duration-500 ease-out"></div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto no-scrollbar pb-24 px-6 pt-6 flex flex-col gap-8">
+<!-- Section: Category -->
+<section class="flex flex-col gap-4">
+<div class="flex flex-col gap-1">
+<h2 class="text-xl font-bold text-slate-900 dark:text-white">What do you serve?</h2>
+<p class="text-sm text-slate-500 dark:text-slate-400">Choose the category that best fits your food truck.</p>
+</div>
+<div class="relative">
+<label class="sr-only" for="category">Truck Category</label>
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-primary">
+<span class="material-symbols-outlined">restaurant</span>
+</div>
+<select class="block w-full pl-12 pr-10 py-4 bg-white dark:bg-slate-800 border border-neutral-border rounded-xl focus:ring-2 focus:ring-primary focus:border-primary text-base font-medium text-slate-900 dark:text-white appearance-none transition-shadow shadow-sm" id="category">
+<option disabled="" selected="" value="">Select category (e.g. Burgers)</option>
+<option value="burgers">Burgers &amp; Sandwiches</option>
+<option value="coffee">Coffee &amp; Beverages</option>
+<option value="dessert">Desserts &amp; Sweets</option>
+<option value="asian">Asian Fusion</option>
+<option value="mexican">Mexican / Tacos</option>
+<option value="healthy">Healthy &amp; Salads</option>
+</select>
+<div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-slate-400">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+<!-- Chips for quick selection -->
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 rounded-full border border-neutral-border bg-white dark:bg-slate-800 text-sm font-medium hover:border-primary hover:text-primary transition-colors" type="button">☕ Coffee</button>
+<button class="px-4 py-2 rounded-full border border-neutral-border bg-white dark:bg-slate-800 text-sm font-medium hover:border-primary hover:text-primary transition-colors" type="button">🍔 Burgers</button>
+<button class="px-4 py-2 rounded-full border border-neutral-border bg-white dark:bg-slate-800 text-sm font-medium hover:border-primary hover:text-primary transition-colors" type="button">🍦 Ice Cream</button>
+</div>
+</section>
+<!-- Section: Online Presence -->
+<section class="flex flex-col gap-4">
+<div class="flex flex-col gap-1">
+<h2 class="text-xl font-bold text-slate-900 dark:text-white">Online Presence</h2>
+<p class="text-sm text-slate-500 dark:text-slate-400">Where can customers find you online?</p>
+</div>
+<!-- Menu Link -->
+<div class="space-y-2">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300 ml-1" for="menu-link">Menu Link (URL)</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400 group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined">link</span>
+</div>
+<input class="block w-full pl-12 pr-4 py-3.5 bg-white dark:bg-slate-800 border border-neutral-border rounded-xl focus:ring-2 focus:ring-primary focus:border-primary text-base text-slate-900 dark:text-white placeholder:text-slate-400 transition-shadow shadow-sm" id="menu-link" placeholder="https://your-menu.com" type="url"/>
+</div>
+</div>
+<!-- Social Handles -->
+<div class="space-y-2">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300 ml-1" for="social-handle">Instagram / Social Handle</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400 group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined">alternate_email</span>
+</div>
+<input class="block w-full pl-12 pr-4 py-3.5 bg-white dark:bg-slate-800 border border-neutral-border rounded-xl focus:ring-2 focus:ring-primary focus:border-primary text-base text-slate-900 dark:text-white placeholder:text-slate-400 transition-shadow shadow-sm" id="social-handle" placeholder="@foodtruck.bh" type="text"/>
+</div>
+</div>
+</section>
+<!-- Section: Media Upload -->
+<section class="flex flex-col gap-4">
+<div class="flex flex-col gap-1">
+<h2 class="text-xl font-bold text-slate-900 dark:text-white">Show off your truck</h2>
+<p class="text-sm text-slate-500 dark:text-slate-400">Upload a high-quality photo of your truck to attract customers.</p>
+</div>
+<div class="relative w-full aspect-[4/3] rounded-2xl border-2 border-dashed border-neutral-border bg-primary-soft/30 dark:bg-slate-800/50 hover:bg-primary-soft/60 dark:hover:bg-slate-800 transition-colors cursor-pointer group flex flex-col items-center justify-center text-center p-6">
+<input accept="image/*" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" type="file"/>
+<div class="h-16 w-16 bg-white dark:bg-slate-700 rounded-full shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-3xl text-primary">add_a_photo</span>
+</div>
+<h3 class="text-base font-bold text-slate-900 dark:text-white mb-1">Tap to Upload Photo</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 max-w-[200px]">Supports: JPG, PNG, HEIC. Max size 10MB.</p>
+</div>
+</section>
+<!-- Subtle Branding / Decor -->
+<div class="flex justify-center py-4 opacity-30">
+<div class="h-1 w-16 bg-neutral-border rounded-full"></div>
+</div>
+</main>
+<!-- Sticky Footer Action Bar -->
+<footer class="absolute bottom-0 left-0 right-0 bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg border-t border-neutral-border p-4 pb-6 z-20 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+<div class="flex flex-col gap-3">
+<button class="w-full bg-primary hover:bg-primary-hover text-white font-bold text-lg py-4 rounded-xl shadow-lg shadow-primary/30 transition-all active:scale-[0.98] flex items-center justify-center gap-2" type="button">
+                    Submit Application
+                    <span class="material-symbols-outlined text-xl">check_circle</span>
+</button>
+</div>
+</footer>
+</div>
+</body></html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Event &amp; Truck Locator Map v2 - foodTracksBH</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#df160b",
+                        "background-light": "#f8f6f5",
+                        "background-dark": "#221110",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }.map-bg {
+            background-color: #f2f2f2;
+            background-image: 
+                linear-gradient(rgba(200, 200, 200, 0.3) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(200, 200, 200, 0.3) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .map-road {
+            position: absolute;
+            background-color: #ffffff;
+            box-shadow: 0 0 0 1px #e5e5e5;
+        }
+        .map-park {
+            position: absolute;
+            background-color: #e6f0e6;
+        }
+        .map-water {
+            position: absolute;
+            background-color: #dbeafe;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased h-screen overflow-hidden">
+<div class="relative flex h-full w-full flex-col overflow-hidden max-w-md mx-auto bg-white dark:bg-background-dark shadow-2xl">
+<div class="absolute inset-0 z-0 map-bg w-full h-full overflow-hidden">
+<div class="map-water w-64 h-64 rounded-full -top-10 -right-20 opacity-50"></div>
+<div class="map-park w-48 h-32 top-32 left-10 rounded-3xl opacity-60"></div>
+<div class="map-park w-64 h-64 bottom-48 -right-10 rounded-full opacity-40"></div>
+<div class="map-road h-[800px] w-6 top-0 left-1/3 transform -rotate-12"></div>
+<div class="map-road h-4 w-[600px] top-1/4 left-0 transform rotate-6"></div>
+<div class="map-road h-3 w-[500px] top-2/3 left-0"></div>
+<div class="map-road h-[600px] w-4 top-20 right-1/4"></div>
+<div class="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center">
+<div class="relative">
+<div class="size-16 bg-primary/10 rounded-full animate-ping absolute inset-0"></div>
+<div class="size-16 bg-primary/20 rounded-full flex items-center justify-center relative">
+<div class="size-4 bg-primary rounded-full shadow-lg border-2 border-white"></div>
+</div>
+</div>
+<div class="mt-2 bg-white px-3 py-1.5 rounded-lg shadow-md border border-slate-100 flex items-center gap-2 animate-bounce">
+<span class="text-xs font-bold text-slate-800">Burger Hub</span>
+<span class="text-[10px] bg-emerald-100 text-emerald-700 px-1.5 py-0.5 rounded font-bold">4.8</span>
+</div>
+</div>
+<div class="absolute top-1/4 left-1/4 z-10">
+<div class="size-4 bg-white rounded-full flex items-center justify-center shadow-md cursor-pointer hover:scale-110 transition-transform">
+<div class="size-2.5 bg-primary rounded-full"></div>
+</div>
+</div>
+<div class="absolute top-1/2 right-1/4 z-10">
+<div class="size-4 bg-white rounded-full flex items-center justify-center shadow-md cursor-pointer hover:scale-110 transition-transform">
+<div class="size-2.5 bg-primary rounded-full"></div>
+</div>
+</div>
+<div class="absolute bottom-1/3 left-10 z-10">
+<div class="size-4 bg-white rounded-full flex items-center justify-center shadow-md cursor-pointer hover:scale-110 transition-transform">
+<div class="size-2.5 bg-primary rounded-full"></div>
+</div>
+</div>
+<div class="absolute top-40 right-10 z-10">
+<div class="size-4 bg-white rounded-full flex items-center justify-center shadow-md cursor-pointer hover:scale-110 transition-transform">
+<div class="size-2.5 bg-primary rounded-full"></div>
+</div>
+</div>
+<div class="absolute bottom-40 right-1/3 z-10">
+<div class="size-4 bg-white rounded-full flex items-center justify-center shadow-md cursor-pointer hover:scale-110 transition-transform">
+<div class="size-2.5 bg-primary rounded-full"></div>
+</div>
+</div>
+</div>
+<div class="absolute top-0 left-0 right-0 z-20 pt-14 px-5 pb-4 bg-gradient-to-b from-white/90 to-transparent">
+<div class="flex gap-3">
+<div class="relative flex-1 group">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-slate-400 text-xl">search</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-3 bg-white border-none shadow-lg shadow-slate-200/50 rounded-2xl text-sm focus:ring-2 focus:ring-primary/50 placeholder:text-slate-400 font-medium" placeholder="Find trucks, burgers, coffee..." type="text"/>
+</div>
+<button class="size-11 flex-none bg-white rounded-2xl shadow-lg shadow-slate-200/50 flex items-center justify-center text-slate-700 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+<div class="flex gap-2 mt-3 overflow-x-auto hide-scrollbar pb-2">
+<button class="flex items-center gap-1.5 px-3 py-1.5 bg-primary text-white rounded-full shadow-md shadow-primary/20 text-xs font-bold whitespace-nowrap">
+<span class="material-symbols-outlined text-sm">lunch_dining</span> All
+                </button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 bg-white text-slate-600 rounded-full shadow-sm text-xs font-bold whitespace-nowrap hover:bg-slate-50">
+<span class="material-symbols-outlined text-sm">local_cafe</span> Coffee
+                </button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 bg-white text-slate-600 rounded-full shadow-sm text-xs font-bold whitespace-nowrap hover:bg-slate-50">
+<span class="material-symbols-outlined text-sm">icecream</span> Desserts
+                </button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 bg-white text-slate-600 rounded-full shadow-sm text-xs font-bold whitespace-nowrap hover:bg-slate-50">
+<span class="material-symbols-outlined text-sm">restaurant</span> Asian
+                </button>
+</div>
+</div>
+<div class="absolute right-5 top-1/2 transform -translate-y-1/2 z-20 flex flex-col gap-3">
+<button class="size-10 bg-white rounded-full shadow-lg shadow-slate-200/50 flex items-center justify-center text-slate-700 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-xl">my_location</span>
+</button>
+<button class="size-10 bg-white rounded-full shadow-lg shadow-slate-200/50 flex items-center justify-center text-slate-700 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-xl">layers</span>
+</button>
+</div>
+<div class="absolute bottom-[80px] left-0 right-0 z-20 px-4">
+<div class="bg-white rounded-2xl p-3 shadow-xl shadow-slate-200/60 border border-slate-100 flex items-center gap-3 transform transition-all hover:scale-[1.02] cursor-pointer">
+<div class="relative size-14 rounded-xl overflow-hidden flex-none">
+<img alt="The Burger Hub" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQY0ubcmJ2RoExXmyOntch0BtQiQM3_FemxbQP4skvy7oA93PRkQfzJxQSQzaen8ftf4oCk2dUsK01ax9UuFtjTXfn3bNq8YlyHmGiv-P3i-sjNTEhebkI25avUaXe_bNe31v1dET9go17mpureXb2ZDAOqvZE3GAvjDMaz-NwEJx5Tv1nxlayfWgIf2QXh6FqKvmqbvamIqJRAsgksqMOciG4E6VpqpsbNHxcRXKNhRtNB9-ehFmn0G658bCrZf0_3pOeooDu7n8"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-slate-900 text-sm truncate">The Burger Hub</h3>
+<div class="flex items-center gap-1 bg-amber-50 px-1.5 py-0.5 rounded-md">
+<span class="material-symbols-outlined text-xs text-amber-500 fill-1">star</span>
+<span class="text-[10px] font-bold text-amber-700">4.8</span>
+</div>
+</div>
+<p class="text-xs text-slate-500 truncate mt-0.5">Gourmet Burgers • American</p>
+<div class="flex items-center gap-2 mt-1.5">
+<span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded">Open</span>
+<span class="text-[10px] text-slate-400">•</span>
+<span class="text-[10px] text-slate-500 font-medium">0.5 km</span>
+</div>
+</div>
+<button class="size-8 rounded-full bg-slate-50 hover:bg-slate-100 flex items-center justify-center text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+<nav class="absolute bottom-0 left-0 right-0 border-t border-slate-100 bg-white/95 backdrop-blur-md px-6 pb-8 pt-3 flex justify-between items-center z-30">
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-[26px] group-hover:scale-110 transition-transform">home</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary group" href="#">
+<span class="material-symbols-outlined text-[26px] fill-1 group-hover:scale-110 transition-transform">map</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">Explore</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-[26px] group-hover:scale-110 transition-transform">favorite</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">Favorite</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-[26px] group-hover:scale-110 transition-transform">person</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">Profile</span>
+</a>
+</nav>
+</div>
+
+</body></html>

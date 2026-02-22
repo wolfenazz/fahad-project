@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Customer Home Dashboard v2 - foodTracksBH</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#df160b", 
+                        "primary-dark": "#b01008",
+                        "background-light": "#ffffff",
+                        "background-subtle": "#fdf2f2",
+                        "background-dark": "#1a0f0e",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "xl": "1rem",
+                        "2xl": "1.5rem",
+                        "3xl": "2rem",
+                    },
+                    boxShadow: {
+                        "card": "0 10px 40px -10px rgba(223, 22, 11, 0.15)",
+                        "nav": "0 -4px 20px rgba(0,0,0,0.05)"
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-slate-50 dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased selection:bg-primary selection:text-white">
+<div class="relative flex h-screen w-full flex-col overflow-hidden max-w-md mx-auto bg-white dark:bg-background-dark shadow-2xl">
+<header class="pt-14 px-6 pb-2 bg-white dark:bg-background-dark">
+<div class="flex items-center justify-between mb-6">
+<div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-semibold tracking-wide">Good afternoon,</p>
+<h1 class="text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">Hello, <span class="text-primary">Foodie!</span></h1>
+</div>
+<div class="relative size-12 rounded-full ring-2 ring-primary/10 p-0.5">
+<img alt="Profile" class="w-full h-full object-cover rounded-full" data-alt="User profile avatar smiling person" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOEBrVxDhHLM-jYUYT7Ww_SAnWL46y7vXD-2bhpt6hFTxY43_U15QWbKMlzq2363wnuDmIymlFNnclVw88jr0dG9VP6lAob9GjoeVS75mKiB9SJ4VFpnqL_tvMA0hbX1BiBTgGtqmZYxtmfNKykxNwsF0YunKKf6DyyXDxR6Ak3PmNCQZceBfcR8NJ7TYiQQ5aVAOQ9CGfkZeoJIl6bHrGGCBzR1SnUejtJoQojOHvBT9FbS8rNVqA6zEjBLJROObX8_MX7XhlD1o"/>
+<div class="absolute top-0 right-0 size-3 bg-primary rounded-full border-2 border-white dark:border-background-dark"></div>
+</div>
+</div>
+<div class="relative shadow-lg shadow-primary/5 rounded-2xl">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-primary font-bold">search</span>
+</div>
+<input class="block w-full pl-12 pr-4 py-4 bg-background-subtle dark:bg-slate-800 border-none rounded-2xl text-base focus:ring-2 focus:ring-primary focus:bg-white dark:focus:bg-slate-800 placeholder:text-slate-400 dark:placeholder:text-slate-500 font-semibold transition-all" placeholder="Find trucks, burgers, events..." type="text"/>
+<div class="absolute inset-y-0 right-0 pr-2 flex items-center">
+<button class="p-2 bg-white dark:bg-slate-700 rounded-xl shadow-sm text-slate-400">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto hide-scrollbar pb-28 space-y-8">
+<section class="mt-6">
+<div class="px-6 flex items-center justify-between mb-4">
+<h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Happening Now 🔥</h2>
+</div>
+<div class="flex overflow-x-auto gap-5 px-6 hide-scrollbar pb-4 snap-x">
+<div class="relative flex-none w-[85%] aspect-[16/9] rounded-3xl overflow-hidden shadow-card group snap-center">
+<img alt="Street Food Fest" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Vibrant outdoor street food festival at night" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAI7YduraThixTUj-LI0frlZrjUasdP98tbNITUaPdzif_LonsU4urJlghXsmFLy2ecgQsUBJLDInp1mDhCXdL2WfXbWo8OZgly8jMCn5wBu7mI0nTr-9xLqQwKfT7CYD0OPZ02fdjrNYJIXWB-bRQ6cfPsSNi4XT0dUqBjDkvJThztCcRS3-esm8zfmZE3dubWMO0dB2CGiwnjrWLc20emfLZ4StU5TnqzuWb_h7bPHt2JjkXTJHbD48WDUNLVo2Gz8dBuStfA-gY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+<div class="absolute top-4 left-4 px-3 py-1.5 bg-white/20 backdrop-blur-md border border-white/20 text-white text-xs font-bold rounded-full flex items-center gap-1.5 uppercase tracking-wider">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+                            Live
+                        </div>
+<div class="absolute bottom-5 left-5 right-5">
+<h3 class="text-white font-bold text-2xl mb-1 leading-tight">Street Food Fest</h3>
+<div class="flex items-center text-white/90 text-sm font-medium">
+<span class="material-symbols-outlined text-base mr-1 text-primary">location_on</span>
+                                Downtown Square
+                            </div>
+</div>
+</div>
+<div class="relative flex-none w-[85%] aspect-[16/9] rounded-3xl overflow-hidden shadow-card group snap-center">
+<img alt="Night Market" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Lively night market with food stalls" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWoA7bdD1YMXEXL263d4j2wTi9syFwTWv1uuqMr7EEjNbWDw7c_qanShYA_zYyPcrsBoSdUlgXbLGS6VKHtpA0sd38UoPqLPWaR8w-40BfADgjhftc4ACTeggAvvlwIDmV48oS4Ri8GwYq3AIB0GhARpFvxqUPCIH7Jo4FmmfV6zvUEZCVy3UnR9nPut9YmK598b8tO7NKSTtQ4YroTlpvTDzhHlA8w1UFwmrS9vJIhJDtNCvq8Ba2ikVQS7Kn89mrLiVkFHqj-70"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+<div class="absolute top-4 left-4 px-3 py-1.5 bg-white/20 backdrop-blur-md border border-white/20 text-white text-xs font-bold rounded-full flex items-center gap-1.5 uppercase tracking-wider">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+                            Live
+                        </div>
+<div class="absolute bottom-5 left-5 right-5">
+<h3 class="text-white font-bold text-2xl mb-1 leading-tight">Night Market</h3>
+<div class="flex items-center text-white/90 text-sm font-medium">
+<span class="material-symbols-outlined text-base mr-1 text-primary">location_on</span>
+                                Waterfront Park
+                            </div>
+</div>
+</div>
+</div>
+</section>
+<section class="px-6">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-xl font-bold tracking-tight">Categories</h2>
+<a class="text-primary text-sm font-bold hover:text-primary-dark transition-colors" href="#">See all</a>
+</div>
+<div class="grid grid-cols-4 gap-y-6 gap-x-4">
+<div class="group flex flex-col items-center gap-2 cursor-pointer">
+<div class="size-16 rounded-2xl bg-orange-50 dark:bg-slate-800 flex items-center justify-center text-orange-500 group-hover:bg-primary group-hover:text-white group-hover:shadow-lg group-hover:shadow-primary/30 transition-all duration-300">
+<span class="material-symbols-outlined text-3xl">lunch_dining</span>
+</div>
+<span class="text-xs font-bold text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">Burgers</span>
+</div>
+<div class="group flex flex-col items-center gap-2 cursor-pointer">
+<div class="size-16 rounded-2xl bg-amber-50 dark:bg-slate-800 flex items-center justify-center text-amber-600 group-hover:bg-primary group-hover:text-white group-hover:shadow-lg group-hover:shadow-primary/30 transition-all duration-300">
+<span class="material-symbols-outlined text-3xl">local_cafe</span>
+</div>
+<span class="text-xs font-bold text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">Coffee</span>
+</div>
+<div class="group flex flex-col items-center gap-2 cursor-pointer">
+<div class="size-16 rounded-2xl bg-pink-50 dark:bg-slate-800 flex items-center justify-center text-pink-500 group-hover:bg-primary group-hover:text-white group-hover:shadow-lg group-hover:shadow-primary/30 transition-all duration-300">
+<span class="material-symbols-outlined text-3xl">icecream</span>
+</div>
+<span class="text-xs font-bold text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">Dessert</span>
+</div>
+<div class="group flex flex-col items-center gap-2 cursor-pointer">
+<div class="size-16 rounded-2xl bg-green-50 dark:bg-slate-800 flex items-center justify-center text-green-600 group-hover:bg-primary group-hover:text-white group-hover:shadow-lg group-hover:shadow-primary/30 transition-all duration-300">
+<span class="material-symbols-outlined text-3xl">nutrition</span>
+</div>
+<span class="text-xs font-bold text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">Healthy</span>
+</div>
+</div>
+</section>
+<section class="px-6">
+<div class="flex items-center justify-between mb-5">
+<h2 class="text-xl font-bold tracking-tight">Nearby Trucks</h2>
+<button class="size-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-lg">map</span>
+</button>
+</div>
+<div class="space-y-5">
+<div class="group bg-white dark:bg-slate-800 rounded-3xl p-3 shadow-sm border border-slate-100 dark:border-slate-700 flex gap-4 hover:shadow-card transition-shadow duration-300">
+<div class="relative size-24 rounded-2xl overflow-hidden flex-none">
+<img alt="The Burger Hub" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Gourmet food truck serving burgers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQY0ubcmJ2RoExXmyOntch0BtQiQM3_FemxbQP4skvy7oA93PRkQfzJxQSQzaen8ftf4oCk2dUsK01ax9UuFtjTXfn3bNq8YlyHmGiv-P3i-sjNTEhebkI25avUaXe_bNe31v1dET9go17mpureXb2ZDAOqvZE3GAvjDMaz-NwEJx5Tv1nxlayfWgIf2QXh6FqKvmqbvamIqJRAsgksqMOciG4E6VpqpsbNHxcRXKNhRtNB9-ehFmn0G658bCrZf0_3pOeooDu7n8"/>
+<div class="absolute top-1.5 left-1.5 bg-white/90 dark:bg-black/80 backdrop-blur text-[10px] font-bold px-1.5 py-0.5 rounded-md flex items-center gap-0.5">
+<span class="material-symbols-outlined text-amber-500 text-[12px] fill-1">star</span> 4.8
+                            </div>
+</div>
+<div class="flex-1 flex flex-col justify-center py-1 pr-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-lg text-slate-900 dark:text-white leading-tight">The Burger Hub</h3>
+<button class="text-slate-300 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<p class="text-slate-500 text-xs font-medium mb-3">American • Burgers • Grill</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-xs font-semibold text-slate-400">
+<span class="material-symbols-outlined text-sm">distance</span> 0.5 km
+                                </div>
+<span class="text-[10px] font-bold bg-emerald-100 text-emerald-700 px-2 py-1 rounded-lg">OPEN</span>
+</div>
+</div>
+</div>
+<div class="group bg-white dark:bg-slate-800 rounded-3xl p-3 shadow-sm border border-slate-100 dark:border-slate-700 flex gap-4 hover:shadow-card transition-shadow duration-300">
+<div class="relative size-24 rounded-2xl overflow-hidden flex-none">
+<img alt="Taco Fiesta" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Colorful taco truck with customers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATj_peG6Zsoj8h3CuUIVPNPWwqMzhv4hj2a_dqYmcfmlVZ3qKJKZ4signPZeJ22itG-KezuOKUA0Dm1aOr7eYaNUHChASRaz7a3G3tlgDiocf24Ydlbhe_QF4Gos8xgEmawxgWuIUBmgTh_AkUikUIzeUpjSWDeBQiR3oH8T3LWs47Qy7e6_3jT71bq092pj4zCA7wVKu-M6AZ2n60CyMgl6t8CGTeXBAIEqLXdghSpWCrmLQQnx_5lqyNwqz1YRNBy5p6a6S9mBk"/>
+<div class="absolute top-1.5 left-1.5 bg-white/90 dark:bg-black/80 backdrop-blur text-[10px] font-bold px-1.5 py-0.5 rounded-md flex items-center gap-0.5">
+<span class="material-symbols-outlined text-amber-500 text-[12px] fill-1">star</span> 4.5
+                            </div>
+</div>
+<div class="flex-1 flex flex-col justify-center py-1 pr-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-lg text-slate-900 dark:text-white leading-tight">Taco Fiesta</h3>
+<button class="text-slate-300 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<p class="text-slate-500 text-xs font-medium mb-3">Mexican • Tacos • Spicy</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-xs font-semibold text-slate-400">
+<span class="material-symbols-outlined text-sm">distance</span> 1.2 km
+                                </div>
+<span class="text-[10px] font-bold bg-emerald-100 text-emerald-700 px-2 py-1 rounded-lg">OPEN</span>
+</div>
+</div>
+</div>
+<div class="group bg-white dark:bg-slate-800 rounded-3xl p-3 shadow-sm border border-slate-100 dark:border-slate-700 flex gap-4 hover:shadow-card transition-shadow duration-300 opacity-60 grayscale-[50%]">
+<div class="relative size-24 rounded-2xl overflow-hidden flex-none">
+<img alt="Brew &amp; Go" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Modern mobile coffee van" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtvGR6wpNSXTR3RiScMEtu6iZi1M1ommuoZdJCsIAICnCOXU5xvgBsAabtZpLp0RmYfI4FF8cv-iQcFWhC0egWV7r5611vOD2v1CY-02B-ctVUhWaI_yElhg2DOqo9NOeOjPxToEGeWx3ksWnfo2ik1I0F_0PQ-Do4JXeo4kiIkUtH6qBwdihDy1K2O96MqCKtLJ3agXs3aIxZiSCRDWAxvW2_K1SMbYXfPIeh1Wu1Oo2oOxIjAuOHA9l7DD5c0pIF31J9mG4deYg"/>
+<div class="absolute top-1.5 left-1.5 bg-white/90 dark:bg-black/80 backdrop-blur text-[10px] font-bold px-1.5 py-0.5 rounded-md flex items-center gap-0.5">
+<span class="material-symbols-outlined text-amber-500 text-[12px] fill-1">star</span> 4.9
+                            </div>
+</div>
+<div class="flex-1 flex flex-col justify-center py-1 pr-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-lg text-slate-900 dark:text-white leading-tight">Brew &amp; Go</h3>
+<button class="text-slate-300 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<p class="text-slate-500 text-xs font-medium mb-3">Coffee • Pastries • Quick</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-xs font-semibold text-slate-400">
+<span class="material-symbols-outlined text-sm">distance</span> 1.8 km
+                                </div>
+<span class="text-[10px] font-bold bg-slate-100 text-slate-500 px-2 py-1 rounded-lg">CLOSED</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<nav class="absolute bottom-6 left-6 right-6 bg-white dark:bg-slate-800 rounded-2xl shadow-nav py-4 px-6 flex justify-between items-center z-10">
+<a class="flex flex-col items-center gap-1 text-primary relative group" href="#">
+<span class="absolute -top-10 scale-0 group-hover:scale-100 transition-transform bg-primary text-white text-[10px] px-2 py-1 rounded-md mb-2">Home</span>
+<span class="material-symbols-outlined text-[26px] fill-1 font-variation-settings-opsz-48">home</span>
+<span class="size-1 bg-primary rounded-full mt-1"></span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[26px]">explore</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[26px]">favorite</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[26px]">person</span>
+</a>
+</nav>
+</div>
+
+</body></html>

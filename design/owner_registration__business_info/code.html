@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Owner Registration - FoodTracksBH</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e0150b",
+                        "background-light": "#f8f6f5",
+                        "background-dark": "#221110",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for clean UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased text-slate-900 dark:text-slate-100 min-h-screen flex flex-col items-center">
+<div class="w-full max-w-md bg-background-light dark:bg-background-dark min-h-screen flex flex-col relative overflow-hidden shadow-2xl">
+<!-- Header -->
+<div class="sticky top-0 z-10 flex items-center bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm p-4 pt-6 pb-2 justify-between border-b border-stone-200 dark:border-stone-800">
+<button aria-label="Go back" class="text-slate-900 dark:text-slate-100 flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-stone-200 dark:hover:bg-stone-800 transition-colors">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">Owner Registration</h2>
+</div>
+<!-- Scrollable Content -->
+<main class="flex-1 flex flex-col p-4 gap-6 pb-32">
+<!-- Progress Section -->
+<div class="flex flex-col gap-2">
+<div class="flex gap-6 justify-between items-center">
+<p class="text-slate-900 dark:text-slate-100 text-sm font-semibold leading-normal">Step 1 of 2</p>
+<span class="text-xs font-medium text-primary">50% Completed</span>
+</div>
+<div class="h-2 w-full rounded-full bg-stone-200 dark:bg-stone-800 overflow-hidden">
+<div class="h-full rounded-full bg-primary transition-all duration-500 ease-out" style="width: 50%;"></div>
+</div>
+<h1 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mt-2">Business Info</h1>
+<p class="text-stone-500 dark:text-stone-400 text-sm">Let's start with your food truck's official details.</p>
+</div>
+<!-- Form Fields -->
+<div class="flex flex-col gap-5">
+<!-- Business Name -->
+<div class="flex flex-col gap-1.5">
+<label class="text-slate-900 dark:text-slate-100 text-sm font-medium" for="businessName">Business Name</label>
+<input class="form-input w-full rounded-lg border-0 bg-stone-100 dark:bg-stone-800/50 dark:text-white focus:ring-2 focus:ring-primary/50 placeholder:text-stone-400 h-12 px-4 text-base transition-shadow" id="businessName" placeholder="e.g. Burger Station" type="text"/>
+</div>
+<!-- Owner Name -->
+<div class="flex flex-col gap-1.5">
+<label class="text-slate-900 dark:text-slate-100 text-sm font-medium" for="ownerName">Owner Full Name</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-stone-400">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</span>
+<input class="form-input w-full rounded-lg border-0 bg-stone-100 dark:bg-stone-800/50 dark:text-white focus:ring-2 focus:ring-primary/50 placeholder:text-stone-400 h-12 pl-11 pr-4 text-base transition-shadow" id="ownerName" placeholder="Your full name" type="text"/>
+</div>
+</div>
+<!-- Phone Number -->
+<div class="flex flex-col gap-1.5">
+<label class="text-slate-900 dark:text-slate-100 text-sm font-medium" for="phone">Mobile Number</label>
+<div class="flex gap-2">
+<div class="flex items-center justify-center rounded-lg bg-stone-100 dark:bg-stone-800/50 px-3 border-0 text-slate-900 dark:text-slate-100 font-medium text-sm">
+                            🇧🇭 +973
+                        </div>
+<input class="form-input flex-1 w-full rounded-lg border-0 bg-stone-100 dark:bg-stone-800/50 dark:text-white focus:ring-2 focus:ring-primary/50 placeholder:text-stone-400 h-12 px-4 text-base transition-shadow" id="phone" placeholder="3XXXXXXX" type="tel"/>
+</div>
+</div>
+<!-- CR Number with Info -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-1.5">
+<label class="text-slate-900 dark:text-slate-100 text-sm font-medium" for="crNumber">Commercial Registration (CR) No.</label>
+<div class="group relative flex items-center">
+<span class="material-symbols-outlined text-stone-400 text-[18px] cursor-help hover:text-primary transition-colors">info</span>
+<!-- Tooltip -->
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2 bg-slate-800 text-white text-xs rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none z-20 text-center shadow-lg">
+                                Found on your official business registration certificate.
+                                <div class="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-slate-800"></div>
+</div>
+</div>
+</div>
+<input class="form-input w-full rounded-lg border-2 border-primary/10 focus:border-primary/50 bg-white dark:bg-stone-800/50 dark:text-white focus:ring-0 placeholder:text-stone-400 h-12 px-4 text-base transition-colors" id="crNumber" placeholder="e.g. 12345-01" type="number"/>
+</div>
+<!-- Upload Section -->
+<div class="mt-2">
+<label class="text-slate-900 dark:text-slate-100 text-sm font-medium mb-2 block">CR Document Copy</label>
+<div class="relative group cursor-pointer">
+<input accept=".pdf,.jpg,.jpeg,.png" class="absolute inset-0 w-full h-full opacity-0 z-10 cursor-pointer" type="file"/>
+<div class="flex flex-col items-center justify-center gap-3 rounded-xl border-2 border-dashed border-primary/40 bg-primary/5 hover:bg-primary/10 dark:bg-primary/5 dark:hover:bg-primary/10 p-6 transition-all duration-200 group-hover:border-primary">
+<div class="size-12 rounded-full bg-white dark:bg-stone-800 shadow-sm flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">cloud_upload</span>
+</div>
+<div class="text-center">
+<p class="text-primary font-semibold text-sm">Tap to upload</p>
+<p class="text-stone-500 dark:text-stone-400 text-xs mt-1">PDF or JPG (Max 5MB)</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Fixed Footer Action -->
+<div class="fixed bottom-0 w-full max-w-md bg-background-light dark:bg-background-dark p-4 border-t border-stone-200 dark:border-stone-800 z-20 backdrop-blur-lg bg-opacity-90 dark:bg-opacity-90">
+<button class="w-full h-14 bg-primary hover:bg-red-700 active:bg-red-800 text-white font-bold rounded-lg shadow-lg shadow-primary/30 flex items-center justify-center gap-2 transition-all transform active:scale-[0.98]">
+                Next Step
+                <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</body></html>

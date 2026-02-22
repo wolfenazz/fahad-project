@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Event &amp; Truck Locator Map</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e0150b",
+                        "background-light": "#f8f6f5",
+                        "background-dark": "#221110",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .map-gradient {
+            background: radial-gradient(circle at center, transparent 0%, rgba(248, 246, 245, 0.4) 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 overflow-hidden">
+<div class="relative flex h-screen w-full flex-col overflow-hidden">
+<!-- Interactive Map Layer -->
+<div class="absolute inset-0 z-0 bg-slate-200 dark:bg-slate-800" data-location="Manama, Bahrain" style="">
+<div class="absolute inset-0 map-gradient"></div>
+<!-- Mock Map Background -->
+<img alt="Detailed map of Bahrain with city streets and coastline" class="h-full w-full object-cover" data-alt="Detailed map of Bahrain showing city streets and coastal areas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEHnXW8gI1DujwSv7jdDBp_m6cHLRK_R2aXlo8Wa_FQzZ703Pr16es0xS4p3kv1ZXGlZBp3PxpUeOZxsAhr1llNn18uhyYsCnUhrdQbvyEBMJpHXmKr6Pw6BGtDIPelCDTEj2RbM140kO87Ib7BGEmx_Zk3y6PTDkIylvmX3QSlKaHo8Mng-VXBdrujlLoYs1Rrl0OEwdk7_uD6YRLozqCzB97QCgk_l1TKTNg-uVLOrxzG6LY2X3P8lH8smyW_8aBV0eQUgyIjhc"/>
+<!-- Map Markers -->
+<!-- Truck Marker 1 (Active) -->
+<div class="absolute left-[40%] top-[35%] -translate-x-1/2 -translate-y-1/2 cursor-pointer group">
+<div class="relative flex flex-col items-center">
+<div class="bg-primary p-2 rounded-full shadow-lg border-2 border-white scale-110">
+<span class="material-symbols-outlined text-white text-[20px] fill-1">local_shipping</span>
+</div>
+<div class="absolute -bottom-1 w-2 h-2 bg-primary rotate-45"></div>
+<div class="mt-2 bg-white/90 dark:bg-slate-900/90 px-2 py-1 rounded-lg text-[10px] font-bold shadow-sm whitespace-nowrap">Burger Bay</div>
+</div>
+</div>
+<!-- Event Marker -->
+<div class="absolute left-[60%] top-[50%] -translate-x-1/2 -translate-y-1/2 cursor-pointer group">
+<div class="relative flex flex-col items-center">
+<div class="bg-primary p-2 rounded-full shadow-lg border-2 border-white">
+<span class="material-symbols-outlined text-white text-[20px] fill-1">confirmation_number</span>
+</div>
+<div class="absolute -bottom-1 w-2 h-2 bg-primary rotate-45"></div>
+<div class="mt-2 bg-white/90 dark:bg-slate-900/90 px-2 py-1 rounded-lg text-[10px] font-bold shadow-sm whitespace-nowrap">Food Fest 2024</div>
+</div>
+</div>
+<!-- Truck Marker 2 -->
+<div class="absolute left-[25%] top-[60%] -translate-x-1/2 -translate-y-1/2 cursor-pointer group">
+<div class="relative flex flex-col items-center">
+<div class="bg-primary p-2 rounded-full shadow-lg border-2 border-white">
+<span class="material-symbols-outlined text-white text-[20px] fill-1">coffee</span>
+</div>
+<div class="absolute -bottom-1 w-2 h-2 bg-primary rotate-45"></div>
+<div class="mt-2 bg-white/90 dark:bg-slate-900/90 px-2 py-1 rounded-lg text-[10px] font-bold shadow-sm whitespace-nowrap">The Roast Hub</div>
+</div>
+</div>
+</div>
+<!-- Top Header Overlay -->
+<div class="relative z-10 px-4 pt-6 pb-2">
+<div class="flex flex-col gap-3">
+<!-- Search Bar -->
+<div class="flex items-center gap-2">
+<div class="flex-1 flex items-center bg-white/90 dark:bg-slate-900/90 backdrop-blur-md rounded-xl px-4 py-3 shadow-xl border border-white/20">
+<span class="material-symbols-outlined text-slate-400 mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full p-0 placeholder:text-slate-400" placeholder="Search cuisines, trucks, events..." type="text"/>
+<button class="ml-2 text-primary">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+</div>
+<!-- Chips/Filters -->
+<div class="flex gap-2 overflow-x-auto no-scrollbar pb-1">
+<button class="bg-primary text-white px-4 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap flex items-center gap-1 shadow-md">
+<span class="material-symbols-outlined text-sm">all_inclusive</span> All
+                    </button>
+<button class="bg-white/90 dark:bg-slate-900/90 px-4 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap flex items-center gap-1 shadow-sm border border-slate-200 dark:border-slate-800">
+<span class="material-symbols-outlined text-sm">lunch_dining</span> Burgers
+                    </button>
+<button class="bg-white/90 dark:bg-slate-900/90 px-4 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap flex items-center gap-1 shadow-sm border border-slate-200 dark:border-slate-800">
+<span class="material-symbols-outlined text-sm">local_cafe</span> Coffee
+                    </button>
+<button class="bg-white/90 dark:bg-slate-900/90 px-4 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap flex items-center gap-1 shadow-sm border border-slate-200 dark:border-slate-800">
+<span class="material-symbols-outlined text-sm">icecream</span> Desserts
+                    </button>
+</div>
+</div>
+</div>
+<!-- Floating Controls -->
+<div class="absolute right-4 top-1/2 -translate-y-1/2 z-10 flex flex-col gap-2">
+<button class="bg-white dark:bg-slate-900 p-3 rounded-xl shadow-xl border border-slate-100 dark:border-slate-800 text-slate-700 dark:text-slate-200">
+<span class="material-symbols-outlined">my_location</span>
+</button>
+<button class="bg-white dark:bg-slate-900 p-3 rounded-xl shadow-xl border border-slate-100 dark:border-slate-800 text-slate-700 dark:text-slate-200">
+<span class="material-symbols-outlined">layers</span>
+</button>
+</div>
+<!-- Bottom Swipeable Cards -->
+<div class="mt-auto relative z-10 w-full pb-24">
+<div class="flex overflow-x-auto no-scrollbar snap-x snap-mandatory px-4 gap-4">
+<!-- Card 1 -->
+<div class="snap-center shrink-0 w-[85%] max-w-[320px] bg-white dark:bg-slate-900 rounded-2xl shadow-2xl overflow-hidden border border-slate-100 dark:border-slate-800">
+<div class="flex p-3 gap-3">
+<div class="w-24 h-24 rounded-xl overflow-hidden shrink-0">
+<img alt="Gourmet food truck serving burgers" class="w-full h-full object-cover" data-alt="Gourmet food truck with neon signs serving burgers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCun2gWUHGaYEkgfyE2bwkiBw3-yN0qilsX3h6fyqa9PdStQQfV5101dKZHKLWxQH_sViOJtltOttil1qQDlZV2DBUMCjIXGdzdEn1so2gZbg1e14MqVfI2k4P5wkz9wx034Sxcs-N-k7khBwvnJS6Yo1V_cM9vbOX7EGU2Tmpnb1EAnKOgV76rQMBGo_1ksIJjyqxgd-QYnCQOeIILMVojQMDtY8W35xXPr0dNLGgvqJyBoKzIeU5RGIowxYMElAJKYxkjF_f0QJM"/>
+</div>
+<div class="flex flex-col justify-between py-0.5 flex-1">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-sm leading-tight line-clamp-1">Burger Bay Express</h3>
+<span class="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 text-[10px] px-1.5 py-0.5 rounded-md font-bold">OPEN</span>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">American • Burgers • Fries</p>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center text-[11px] text-slate-600 dark:text-slate-300 gap-1">
+<span class="material-symbols-outlined text-primary text-sm">distance</span>
+<span>1.2 km away</span>
+</div>
+<div class="flex items-center text-[11px] bg-slate-50 dark:bg-slate-800 px-1.5 py-0.5 rounded">
+<span class="material-symbols-outlined text-yellow-500 text-sm fill-1">star</span>
+<span class="font-bold ml-0.5">4.8</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="snap-center shrink-0 w-[85%] max-w-[320px] bg-white dark:bg-slate-900 rounded-2xl shadow-2xl overflow-hidden border border-slate-100 dark:border-slate-800">
+<div class="flex p-3 gap-3">
+<div class="w-24 h-24 rounded-xl overflow-hidden shrink-0">
+<img alt="Specialty coffee truck bar" class="w-full h-full object-cover" data-alt="Sleek modern coffee truck bar with minimalist branding" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxaEqf42R8Qo8KzgKXgJUbln0lTM7sOw-NAr1s5wvP_YLD3SndPo9qaqnJwL0L8Ag_sjBAEldu33A4h-1Ggdq-avxG_mtHiKpcHY80s7mLeklPf8nhqJwclTi1-6QO-lVZxNc4i-QetkdIj4a_bOcpMCj-wmWSAc-HpZwx1Seh6vy21mQceD_0miob6akHsIBILaWXXUDm5LW7ePCEzmiC6nJjDHG18kGx7l0V0_cHb_GH2FSA8Mb7fWiywnYncBLHQGKdNNMTMZk"/>
+</div>
+<div class="flex flex-col justify-between py-0.5 flex-1">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-sm leading-tight line-clamp-1">The Roast Hub</h3>
+<span class="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 text-[10px] px-1.5 py-0.5 rounded-md font-bold">OPEN</span>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Specialty Coffee • V60</p>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center text-[11px] text-slate-600 dark:text-slate-300 gap-1">
+<span class="material-symbols-outlined text-primary text-sm">distance</span>
+<span>3.5 km away</span>
+</div>
+<div class="flex items-center text-[11px] bg-slate-50 dark:bg-slate-800 px-1.5 py-0.5 rounded">
+<span class="material-symbols-outlined text-yellow-500 text-sm fill-1">star</span>
+<span class="font-bold ml-0.5">4.9</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3 (Event) -->
+<div class="snap-center shrink-0 w-[85%] max-w-[320px] bg-white dark:bg-slate-900 rounded-2xl shadow-2xl overflow-hidden border border-slate-100 dark:border-slate-800">
+<div class="flex p-3 gap-3">
+<div class="w-24 h-24 rounded-xl overflow-hidden shrink-0">
+<img alt="Outdoor food festival event" class="w-full h-full object-cover" data-alt="Outdoor food festival with stalls and colorful decorations" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNIz_dIkM4uqZYpv_Vuaz84b2s9mJG2GpkSeMhqQ_oaL2iUpwmhP-9OPEqTI6OvMmSK4TKUc-mtYJ_XWCcO63TPNRtY1xeMzQE9hzZINfcblImVr0DllfsqzLkovSi7hInlf8nNSvUBFhn4X8bQwPJgtiRLvkbbRbLHG-2l96dO8udqpG_nYbi64hSSQQItdbQw8CoieJLnZVl3GIJd3qwcEdp557J9BbP0PKSGzJaKalwlsJz960zeFUIm1hFl-h88NG01LVCMXg"/>
+</div>
+<div class="flex flex-col justify-between py-0.5 flex-1">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-sm leading-tight line-clamp-1">Bahrain Food Fest</h3>
+<span class="bg-primary/10 text-primary text-[10px] px-1.5 py-0.5 rounded-md font-bold">EVENT</span>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Multiple Trucks • Music</p>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center text-[11px] text-slate-600 dark:text-slate-300 gap-1">
+<span class="material-symbols-outlined text-primary text-sm">calendar_today</span>
+<span>Until 11:00 PM</span>
+</div>
+<div class="flex items-center text-[11px] text-primary">
+<span class="font-bold">Featured</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Bar -->
+<div class="absolute bottom-0 left-0 right-0 z-20 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800 pb-safe">
+<div class="flex items-center justify-around h-20 px-4">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined text-[28px] fill-1">explore</span>
+<span class="text-[10px] font-bold">Explore</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined text-[28px]">favorite</span>
+<span class="text-[10px] font-medium">Favorites</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined text-[28px]">calendar_month</span>
+<span class="text-[10px] font-medium">Events</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined text-[28px]">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</div>
+</div>
+</div>
+</body></html>

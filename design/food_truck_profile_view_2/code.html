@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Food Truck Profile View v1</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e0150b",
+                        "background-light": "#f8f6f5",
+                        "background-dark": "#180a0a",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen pb-24">
+<div class="relative w-full h-[420px] @container">
+<div class="absolute inset-0 bg-center bg-cover bg-no-repeat" data-alt="A vibrant red gourmet burger food truck parked on a city street" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA7_EI_f93IjgzhYJdlfQQpWXlFgr0Rsn7QXVvsfg4BGh80TJ_wVF118nLThcRG-ZW0uRG5InDFjd9LgKIK9fE9s7WlhL0EIM7BpAmnQ3otPT5-qU9rAlL92aolgOlIVjC5FgD3jlIVe555hji4qOJVXmnHTeZX99jypW1rrAko7geI7ZLL1OcrVdRy8-AOUDzHxTzROY5H5UDI3ZFemgMpXLt2Izq-0dHMP5TZjl7mfkuhbzXXtDFFvmxbs2_E3fgFp2t0ihC3-0Q');">
+<div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80"></div>
+</div>
+<div class="absolute top-0 left-0 right-0 pt-12 px-4 flex justify-between items-center z-10">
+<button class="size-11 flex items-center justify-center bg-white/20 backdrop-blur-xl rounded-full text-white border border-white/10 hover:bg-white/30 transition-colors">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+<div class="flex gap-3">
+<button class="size-11 flex items-center justify-center bg-white/20 backdrop-blur-xl rounded-full text-white border border-white/10 hover:bg-white/30 transition-colors">
+<span class="material-symbols-outlined">share</span>
+</button>
+<button class="size-11 flex items-center justify-center bg-white rounded-full text-primary shadow-xl hover:scale-105 transition-transform active:scale-95">
+<span class="material-symbols-outlined font-fill">favorite</span>
+</button>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 right-0 px-6 pb-12 pt-24 bg-gradient-to-t from-black via-black/60 to-transparent">
+<div class="flex items-center gap-2 mb-3">
+<span class="px-3 py-1 bg-green-500 text-white text-[10px] font-bold uppercase rounded-full tracking-wider shadow-sm">Open Now</span>
+<span class="px-3 py-1 bg-primary text-white text-[10px] font-bold uppercase rounded-full tracking-wider shadow-sm">Top Rated</span>
+</div>
+<h1 class="text-4xl font-extrabold tracking-tight text-white mb-2 leading-tight drop-shadow-sm">The Sizzle Station</h1>
+<div class="flex items-center gap-4 text-white/90">
+<div class="flex items-center gap-1.5 bg-white/10 backdrop-blur-md px-2.5 py-1 rounded-lg">
+<span class="material-symbols-outlined text-yellow-400 font-fill text-sm">star</span>
+<span class="text-sm font-bold text-white">4.9</span>
+<span class="text-xs opacity-70 border-l border-white/20 pl-1.5 ml-0.5">(2.4k)</span>
+</div>
+<span class="text-sm font-medium">Gourmet Burgers • $$$</span>
+</div>
+</div>
+</div>
+<main class="relative -mt-6 bg-background-light dark:bg-background-dark rounded-t-[2rem] px-5 pt-8 pb-10 space-y-8 shadow-[0_-4px_20px_rgba(0,0,0,0.1)]">
+<div class="grid grid-cols-2 gap-4">
+<button class="group flex flex-col items-center justify-center gap-1 bg-primary text-white font-bold py-4 rounded-2xl shadow-lg shadow-primary/30 hover:bg-red-600 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-2xl mb-1">menu_book</span>
+<span class="text-base">View Menu</span>
+</button>
+<button class="group flex flex-col items-center justify-center gap-1 bg-white dark:bg-slate-800 text-slate-800 dark:text-white font-bold py-4 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:bg-slate-50 dark:hover:bg-slate-750 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-primary text-2xl mb-1">calendar_month</span>
+<span class="text-base">Schedule</span>
+</button>
+</div>
+<section class="space-y-3">
+<h2 class="text-xl font-bold text-slate-900 dark:text-white">About the Truck</h2>
+<p class="text-slate-600 dark:text-slate-400 leading-7 text-[15px]">
+            Serving up the city's most legendary smash burgers using locally-sourced wagyu beef and our secret "Sizzle Sauce". Find us daily at rotating hotspots across the downtown area.
+        </p>
+</section>
+<section class="p-5 bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm">
+<div class="flex items-start justify-between mb-4">
+<div class="flex gap-4">
+<div class="bg-red-50 dark:bg-red-900/20 p-3 rounded-xl text-primary shrink-0">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-white">Current Location</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Arts District, 452 Broadway Ave</p>
+<div class="flex items-center gap-1 mt-2">
+<span class="size-1.5 rounded-full bg-green-500 animate-pulse"></span>
+<p class="text-slate-400 text-xs font-medium">Until 10:00 PM tonight</p>
+</div>
+</div>
+</div>
+<button class="bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-5 py-2.5 rounded-xl text-xs font-bold shadow-md hover:opacity-90 transition-opacity">
+                Navigate
+            </button>
+</div>
+<div class="h-36 w-full rounded-xl bg-slate-100 overflow-hidden relative group cursor-pointer" data-location="Arts District New York">
+<div class="absolute inset-0 bg-cover bg-center opacity-90 transition-transform duration-700 group-hover:scale-105" data-alt="A stylized street map view of a city district" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDG2OcV4G9nKxvpdIV7Tm1zzAbc4roIPe6aBWofsPMzwwMnCV1Mccv-YoWTw2hs0MnaHVhwyjH3tMAlmFBuDqcY9RIgNkZdD6k6yRRvLluv3cyPEVK0Itwc_JKtZK22Ch6Q5pgRQr_V3x76NdDz0BepIuFyXx1PWxGGSu8GF3xSw-ZeeZwfXPZVXfLhx9JiBircOyaR8SvGWPuV64RuxoGEOs73Juk32z8RsnExFf8Mk4_GxLPRjbhFqmXNJWSVe32-SwB919tKUq8');"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="size-12 bg-primary/20 rounded-full flex items-center justify-center animate-pulse">
+<div class="size-4 bg-primary rounded-full border-[3px] border-white shadow-xl"></div>
+</div>
+</div>
+</div>
+</section>
+<section class="space-y-4">
+<div class="flex justify-between items-end px-1">
+<h2 class="text-xl font-bold text-slate-900 dark:text-white">Food Gallery</h2>
+<button class="text-primary text-sm font-semibold hover:text-red-700 transition-colors">See all</button>
+</div>
+<div class="flex gap-4 overflow-x-auto hide-scrollbar -mx-5 px-5 pb-2">
+<div class="shrink-0 w-44 h-44 rounded-2xl overflow-hidden bg-slate-200 relative group shadow-md">
+<img alt="Double wagyu cheeseburger with dripping sauce" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Close up shot of a juicy double cheeseburger" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHLLQrsKl8WvesyOxYKi-W30929fjp2p-vWuqoV6xgBo1Pr_LSDeaX6mb1Z3IPRWOoZMAFYlBabNRfonETe5UOxSI4LTIkJzSpHe0aasmWrgDbY2CbeQScno5_iIcPnmHZrjt49R6thQ7Y7uWRFEmkVGXb9E0aJtyOV_UAAsJTpteIJ8O4QotqgF8r1hbpvq46B3paoLi8UxLWBKJrJdX06cKCaPyOigf_Ijr3-MrcRW0RXWzdRg4NLGBawPlsyJrzEhgy5OOb72c"/>
+</div>
+<div class="shrink-0 w-44 h-44 rounded-2xl overflow-hidden bg-slate-200 relative group shadow-md">
+<img alt="Truffle parmesan fries in a basket" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Golden crispy french fries seasoned with herbs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1wf07-j6-IVcKCpaqWq47IlIT1pe35FM4WJob75GcUFCMeUSm96ThYzTxDOddq5KId2Ce7WBr8gxL-UKhOUEIzUpYWEuSJoaP4Ug9SNu2BmD3cOXqsK6vJRmLTxtwmnA30RgT94TEIf-tIycVf8evl0CuVZermw7flICfHERBQB34_xYHFV_wGR_OlzF-9IzJviX9JQLfAHrKkMnmA7zvJg9XWM5EvrYMb5QmbpOmOWN1djjwaNvXUd9SE9toQnWJ24CPozndjs4"/>
+</div>
+<div class="shrink-0 w-44 h-44 rounded-2xl overflow-hidden bg-slate-200 relative group shadow-md">
+<img alt="Spicy chicken sandwich with coleslaw" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Delicious fried chicken sandwich on a brioche bun" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDS0nYv3V1SnMqgsGRq_xOm3fmVy6GfKt1wvXcsL_SLDzF_2WSBXwzxztAeV-IQs5eJSuW7mjRhO-lFIY9bqMNk4WlKsAJwYjJvaW5Fm_NutNnXe7E-Z1R88zkyXaoT2TB120-uBdFPqHevPPkvnT9SRoZX3WUMcMRl_0roEs1oG2w19EdGW_29JPV6UgWWE-XLpZTeU9mjAlLS3qXtUw0Gi-am_ZjYxd1mkLo1MnJmwnruhFpheYtRjWdRVyBUNdjwigTG-iHBSQg"/>
+</div>
+</div>
+</section>
+<section class="space-y-5">
+<div class="flex justify-between items-center px-1">
+<h2 class="text-xl font-bold text-slate-900 dark:text-white">Customer Reviews</h2>
+<div class="flex items-center gap-1.5 bg-yellow-50 dark:bg-yellow-900/20 px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-yellow-500 text-sm font-fill">star</span>
+<span class="text-sm font-bold text-slate-800 dark:text-yellow-100">4.9</span>
+</div>
+</div>
+<div class="space-y-4">
+<div class="p-5 bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm">
+<div class="flex justify-between items-start mb-3">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-slate-200 border border-slate-100 overflow-hidden">
+<img alt="User avatar" class="w-full h-full object-cover" data-alt="Profile picture of a male customer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsMuSEUgbJWdMQ7fj0H-3AYC32Vp324uwub_2UinjcBL2RRmpcBgjTNiAMPlvfMV6-iTrQIr_mWDdSpAEuaTHYRg5RpAlTPzYQBkejIIOUCu6BrYicXt0qKLhlfI_N0-f5kpNVy5y4w0yhgaea_nxEfk-Vq7ZJ6R2x_II5WE2DumpG9VQodkoKEh6y_pw0yklwPSZyHwJhYGPeO0PlBLe0EBzvfVaG6fmW-DwyHpmYWj1z3SYHHatcUWUxxxhve51IvJgbVhG7is8"/>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-white">Mark Johnson</p>
+<p class="text-xs text-slate-400">2 days ago</p>
+</div>
+</div>
+<div class="flex text-yellow-400 gap-0.5">
+<span class="material-symbols-outlined text-[16px] font-fill">star</span>
+<span class="material-symbols-outlined text-[16px] font-fill">star</span>
+<span class="material-symbols-outlined text-[16px] font-fill">star</span>
+<span class="material-symbols-outlined text-[16px] font-fill">star</span>
+<span class="material-symbols-outlined text-[16px] font-fill">star</span>
+</div>
+</div>
+<p class="text-[15px] text-slate-600 dark:text-slate-300 leading-relaxed">"Best burger I've had in years. The Sizzle Sauce is actually magic. Highly recommend the Double Wagyu!"</p>
+</div>
+<div class="p-5 bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm">
+<div class="flex justify-between items-start mb-3">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-slate-200 border border-slate-100 overflow-hidden">
+<img alt="User avatar" class="w-full h-full object-cover" data-alt="Profile picture of a female customer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPU2tMP-hrHljRQwsz7eZexTGl5swz9DJuFNrGkb_58GQX58l8PaZMx2N-pzh7DxF33h40oEhNy_A_5p6Or0sRBQgD9J7kXX-Gd-ZCYx7DvuU8er_XsEWMm85H8nVTUPZ6s3whK7_pjXeQ4N4rtsTd9tZlmNn5biKs3Wa5gnEKYIE_4H__JHj8NSc4S0y2nx5-Gy_ddodhXE1xUy3Q-6BMHybg74A4IkAgWHOk1OLfnclogrS4KSdc8bGSpxgrlWDf8OpjVetaDNk"/>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-white">Sarah Chen</p>
+<p class="text-xs text-slate-400">1 week ago</p>
+</div>
+</div>
+<div class="flex text-yellow-400 gap-0.5">
+<span class="material-symbols-outlined text-[16px] font-fill">star</span>
+<span class="material-symbols-outlined text-[16px] font-fill">star</span>
+<span class="material-symbols-outlined text-[16px] font-fill">star</span>
+<span class="material-symbols-outlined text-[16px] font-fill">star</span>
+<span class="material-symbols-outlined text-[16px] font-fill">star_half</span>
+</div>
+</div>
+<p class="text-[15px] text-slate-600 dark:text-slate-300 leading-relaxed">"Fries were amazing! A bit of a wait but totally worth it for the quality."</p>
+</div>
+</div>
+<button class="w-full py-4 border border-slate-200 dark:border-slate-700 rounded-2xl text-sm font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+            View all 2,431 reviews
+        </button>
+</section>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-[#180a0a]/90 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800/50 pb-8 pt-2 z-50">
+<div class="max-w-md mx-auto flex justify-between items-center px-8">
+<a class="flex flex-col items-center gap-1 group w-16" href="#">
+<div class="p-1.5 rounded-full group-hover:bg-slate-100 dark:group-hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">home</span>
+</div>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-primary transition-colors">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 group w-16" href="#">
+<div class="p-1.5 rounded-full group-hover:bg-slate-100 dark:group-hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">explore</span>
+</div>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-primary transition-colors">Explore</span>
+</a>
+<a class="flex flex-col items-center gap-1 group w-16" href="#">
+<div class="p-1.5 rounded-full bg-primary/10">
+<span class="material-symbols-outlined text-primary font-fill">favorite</span>
+</div>
+<span class="text-[10px] font-bold text-primary">Favorite</span>
+</a>
+<a class="flex flex-col items-center gap-1 group w-16" href="#">
+<div class="p-1.5 rounded-full group-hover:bg-slate-100 dark:group-hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">person</span>
+</div>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-primary transition-colors">Profile</span>
+</a>
+</div>
+</nav>
+
+</body></html>

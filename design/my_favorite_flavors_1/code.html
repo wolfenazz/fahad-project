@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Favorite Flavors - foodTracksBH</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e0150b",
+                        "background-light": "#f8f6f5",
+                        "background-dark": "#221110",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            background-color: rgba(248, 246, 245, 0.8);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header / Navigation Bar (iOS Style) -->
+<header class="sticky top-0 z-50 ios-blur border-b border-slate-200 dark:border-slate-800 px-4 py-3">
+<div class="flex items-center justify-between max-w-md mx-auto">
+<button class="w-10 h-10 flex items-center justify-start text-primary">
+<span class="material-symbols-outlined text-3xl">chevron_left</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight">My Favorite Flavors</h1>
+<button class="w-10 h-10 flex items-center justify-end text-primary">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</header>
+<main class="flex-1 max-w-md mx-auto w-full pb-24">
+<!-- Segmented Control -->
+<div class="px-4 py-4">
+<div class="flex p-1 bg-slate-200/50 dark:bg-slate-800/50 rounded-xl">
+<button class="flex-1 py-1.5 text-sm font-semibold rounded-lg bg-white dark:bg-slate-700 shadow-sm text-slate-900 dark:text-white">
+                    Food Trucks
+                </button>
+<button class="flex-1 py-1.5 text-sm font-medium text-slate-500 dark:text-slate-400">
+                    Events
+                </button>
+</div>
+</div>
+<!-- Favorites List -->
+<div class="px-4 space-y-4">
+<!-- Item 1: Open Now -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-3 shadow-sm border border-slate-100 dark:border-slate-800 flex items-center gap-4">
+<div class="relative w-20 h-20 shrink-0 overflow-hidden rounded-lg">
+<img alt="Gourmet Tacos Truck" class="w-full h-full object-cover" data-alt="A vibrant red food truck serving tacos" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGFNQMqb4u_nAFjKxwAy12SyH6n0D4uG3aITXY5mEo_R7WjhYUMU8qYzeVxjbwFO4jCuBZmX34zQQ_nATTHUcK5EzG1MTJjtO6qJgEfkN1lLRFRdipMWtqBeW3LFOs1lZP5z6k7R3OpQeZ8DatWYSfb6x8aMPv6c0ZhDk9PieFTi1iFzQeHWZd1rLzJoKAMoBLx9nH2oS3Spr4F3HeUZ1YtLlNCGOKdhJ-68HiIyqhS2yC9FsYHL3sKA8uld-0aj5TVyQwIWNtMI8"/>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-bold text-base truncate">Taco Time Express</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 mb-1">Mexican • 0.8 miles</p>
+<div class="flex items-center gap-1 text-primary">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span class="text-xs font-bold uppercase tracking-wider">Open Now</span>
+</div>
+</div>
+<button class="shrink-0 p-2 text-primary/40 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1">favorite</span>
+</button>
+</div>
+<!-- Item 2: Closing Soon -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-3 shadow-sm border border-slate-100 dark:border-slate-800 flex items-center gap-4">
+<div class="relative w-20 h-20 shrink-0 overflow-hidden rounded-lg">
+<img alt="Burger Box Truck" class="w-full h-full object-cover" data-alt="A modern burger food truck setup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2wKSLAWzdE5b2dDhSTmSCO9QkDONKnM58LWpgqVyj_R-quhn3D6ZFOZ9c6ogC2nRpcjroepm2th6uLhAP82R6xe_76NosyLPpojFDUlp_nAoD5c7a7NVqGt3nsuJr6bh01I-_TIF-BB6sqZuWHa6kv9psAd4Iqisg99FQEw-xaQfNyg3uMUxiyn1V5RlkfXVzi488VnNgrcxgSWot0vb-Of51cZlfJLkDhDJDhB0SUlz_1hSMhplo92FfYEgdRvO7rF6GvFUA3Jg"/>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-bold text-base truncate">Burger Box Deluxe</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 mb-1">American • 1.2 miles</p>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-xs">schedule</span>
+<span class="text-xs font-bold uppercase tracking-wider">Closes in 15m</span>
+</div>
+</div>
+<button class="shrink-0 p-2 text-primary/40 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1">favorite</span>
+</button>
+</div>
+<!-- Item 3: Event -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-3 shadow-sm border border-slate-100 dark:border-slate-800 flex items-center gap-4">
+<div class="relative w-20 h-20 shrink-0 overflow-hidden rounded-lg">
+<img alt="Street Food Festival" class="w-full h-full object-cover" data-alt="Crowd gathered at a street food event" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeOP0TEu_bZ8D4TMnGLtutY7RUcLRnfcDUykxQTff4sPkf6P2n3up5c9acLgStgAC61b98RJiS3S6qMuqJCn6_QVZWxTBECRYbNFZqxLHkgGsLAJHhD1U9Qa3Nf5fUwxo8QhsmxUptgLQZ6SZU2f-Z7BoNVHQhMP8yHFcTgbIjrE1pSga5286cUq9BI4W-CbFav28i-CjXmU_IN4Qy3Vjl6YSpMjbbrh5eGVu818Ta0eSgzgQw0T9O6chM0MRwmflKtncEZtS6zzw"/>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-bold text-base truncate">Summer Street Fest</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 mb-1">Central Park • July 24</p>
+<div class="flex items-center gap-1 text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-xs">calendar_today</span>
+<span class="text-xs font-bold uppercase tracking-wider">Starts in 2 days</span>
+</div>
+</div>
+<button class="shrink-0 p-2 text-primary/40 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1">favorite</span>
+</button>
+</div>
+</div>
+<!-- Empty State (Hidden if items exist, but shown here for layout example) -->
+<div class="hidden flex flex-col items-center justify-center px-8 py-20 text-center">
+<div class="w-48 h-48 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-8xl text-primary" style="font-variation-settings: 'opsz' 48, 'wght' 200">bakery_dining</span>
+</div>
+<h2 class="text-xl font-bold mb-2">No favorites yet?</h2>
+<p class="text-slate-500 dark:text-slate-400 mb-8">Your cravings are waiting! Start exploring the best local food trucks.</p>
+<button class="w-full bg-primary text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/30 active:scale-95 transition-transform">
+                Start Exploring
+            </button>
+</div>
+<!-- Secondary Action: Clear All -->
+<div class="px-4 py-8 text-center">
+<button class="text-slate-400 dark:text-slate-500 text-sm font-medium hover:text-primary transition-colors">
+                Remove all favorites
+            </button>
+</div>
+</main>
+<!-- Bottom Navigation Bar (iOS Style) -->
+<nav class="fixed bottom-0 left-0 right-0 ios-blur border-t border-slate-200 dark:border-slate-800 pb-8 pt-2">
+<div class="max-w-md mx-auto flex justify-around items-center">
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">Explore</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">favorite</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">Favorites</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>

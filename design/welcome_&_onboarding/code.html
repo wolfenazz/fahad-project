@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>foodTracksBH - Welcome</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e0150b",
+                        "background-light": "#f8f6f5",
+                        "background-dark": "#221110",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased h-screen overflow-hidden">
+<div class="relative h-full w-full flex flex-col justify-between max-w-md mx-auto bg-background-light dark:bg-background-dark shadow-2xl overflow-hidden">
+<!-- Hero Section with Background Image -->
+<div class="relative flex-grow w-full h-[60%] overflow-hidden rounded-b-3xl z-0">
+<!-- Image with description -->
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105" data-alt="Vibrant night scene of a food truck serving burgers" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDUbhC9pmTUDMDSqln5y4hdRAhPeP7dKNe8roBc8mrVwMI5EGYCJPMGrh1xbdxyF0YwamqS0qqeZf-kbq7Di7WjKP8IXydRc6iWdvwWLXvYkc3ATEogpHD2fHPRXO6Jd9cYFpfK4VvBKCDoumfPjmUyE2hpOkPUtPdoIlYEurmfhkF3XCuzNnXSMDrLu6EULRoaCZ1-SUC5GNV_4pf7eH7wWJYv8E68ShyoUzVHGtdtOFuC0m_fxrn3lJkMmV_470m60hsJ4KduNes');">
+</div>
+<!-- Gradient Overlay for Contrast -->
+<div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60"></div>
+<!-- Header / Logo Area -->
+<div class="absolute top-0 w-full p-6 pt-12 flex justify-between items-center z-10">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white shadow-lg">
+<span class="material-symbols-outlined text-xl">lunch_dining</span>
+</div>
+<span class="text-white font-bold text-lg tracking-wide drop-shadow-md">foodTracksBH</span>
+</div>
+</div>
+</div>
+<!-- Content Sheet -->
+<div class="relative z-10 flex flex-col bg-background-light dark:bg-background-dark -mt-6 rounded-t-3xl px-6 pt-8 pb-8 shadow-[0_-4px_20px_rgba(0,0,0,0.1)]">
+<!-- Text Content -->
+<div class="flex flex-col gap-2 mb-8 text-center">
+<h1 class="text-slate-900 dark:text-white text-[32px] font-extrabold leading-tight tracking-tight">
+                    Discover Local <span class="text-primary">Flavors</span>
+</h1>
+<p class="text-slate-500 dark:text-slate-400 text-base font-medium leading-relaxed px-2">
+                    Track down the hottest food trucks, pop-up events, and hidden gems happening right now across Bahrain.
+                </p>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col gap-4 w-full">
+<!-- Primary Action: Foodie -->
+<button class="group relative flex w-full items-center justify-center rounded-xl bg-primary h-14 px-6 transition-all active:scale-[0.98] hover:shadow-lg hover:shadow-primary/30">
+<span class="absolute left-6 flex items-center text-white/80">
+<span class="material-symbols-outlined">restaurant</span>
+</span>
+<span class="text-white text-lg font-bold tracking-wide">I am a Foodie</span>
+<span class="absolute right-6 flex items-center text-white/80 transition-transform group-hover:translate-x-1">
+<span class="material-symbols-outlined">arrow_forward</span>
+</span>
+</button>
+<!-- Secondary Action: Vendor -->
+<button class="flex w-full items-center justify-center rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-transparent h-14 px-6 transition-all hover:bg-slate-50 dark:hover:bg-slate-800 active:scale-[0.98]">
+<span class="text-slate-700 dark:text-slate-200 text-base font-bold tracking-wide">I own a Food Truck</span>
+</button>
+</div>
+<!-- Footer Login Link -->
+<div class="mt-6 flex justify-center pb-2">
+<p class="text-sm text-slate-500 dark:text-slate-400 font-medium">
+                    Already a member? 
+                    <a class="text-primary hover:text-red-700 font-bold ml-1 transition-colors" href="#">Log in</a>
+</p>
+</div>
+<!-- Bottom Safe Area Spacer -->
+<div class="h-2 w-full"></div>
+</div>
+</div>
+</body></html>

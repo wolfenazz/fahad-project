@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Account Registration - foodTracksBH</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e0150b",
+                        "primary-dark": "#b91008",
+                        "background-light": "#f8f6f5",
+                        "background-dark": "#221110",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d1615",
+                        "text-main-light": "#1c0e0d",
+                        "text-main-dark": "#fcf8f8",
+                        "text-muted-light": "#6b5c5b",
+                        "text-muted-dark": "#a89c9b",
+                        "border-light": "#e8d0ce",
+                        "border-dark": "#4a2b29",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hide for cleaner mobile look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased text-text-main-light dark:text-text-main-dark transition-colors duration-300">
+<!-- Main Container: Mimics an iOS screen wrapper -->
+<div class="relative mx-auto flex h-full min-h-screen w-full max-w-md flex-col bg-background-light dark:bg-background-dark shadow-2xl overflow-hidden">
+<!-- Status Bar Area (Placeholder) -->
+<div class="h-12 w-full shrink-0"></div>
+<!-- Navigation Header -->
+<div class="flex items-center justify-between px-4 pb-2">
+<button class="flex size-10 items-center justify-center rounded-full text-text-main-light dark:text-text-main-dark hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">arrow_back_ios_new</span>
+</button>
+<div class="w-10"></div> <!-- Spacer for balance -->
+</div>
+<!-- Content Scroll Area -->
+<div class="flex-1 overflow-y-auto no-scrollbar px-6 pb-8">
+<!-- Role Indicator Pill -->
+<div class="mt-2 flex">
+<div class="inline-flex h-8 items-center gap-x-2 rounded-full bg-primary/10 px-4 py-1 dark:bg-primary/20">
+<span class="material-symbols-outlined text-primary text-[18px]">person</span>
+<span class="text-sm font-semibold text-primary">Signing up as a Customer</span>
+</div>
+</div>
+<!-- Header Text -->
+<div class="mt-6 mb-8">
+<h1 class="text-3xl font-bold tracking-tight text-text-main-light dark:text-text-main-dark">Create Account</h1>
+<p class="mt-2 text-base font-medium text-text-muted-light dark:text-text-muted-dark">
+                    Join Bahrain's favorite food community.
+                </p>
+</div>
+<!-- Form Fields -->
+<form class="space-y-5" onsubmit="event.preventDefault();">
+<!-- Full Name Field -->
+<div class="group">
+<label class="mb-1.5 block text-sm font-semibold text-text-main-light dark:text-text-main-dark" for="fullname">Full Name</label>
+<div class="relative">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
+<span class="material-symbols-outlined text-text-muted-light/60 dark:text-text-muted-dark/60 text-[20px]">badge</span>
+</div>
+<input class="block w-full rounded-xl border-0 bg-surface-light dark:bg-surface-dark py-3.5 pl-11 pr-4 text-text-main-light dark:text-text-main-dark shadow-sm ring-1 ring-inset ring-border-light dark:ring-border-dark placeholder:text-text-muted-light/50 dark:placeholder:text-text-muted-dark/50 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 transition-all" id="fullname" name="fullname" placeholder="Ali Ahmed" type="text"/>
+</div>
+</div>
+<!-- Email Field -->
+<div class="group">
+<label class="mb-1.5 block text-sm font-semibold text-text-main-light dark:text-text-main-dark" for="email">Email Address</label>
+<div class="relative">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
+<span class="material-symbols-outlined text-text-muted-light/60 dark:text-text-muted-dark/60 text-[20px]">mail</span>
+</div>
+<input class="block w-full rounded-xl border-0 bg-surface-light dark:bg-surface-dark py-3.5 pl-11 pr-4 text-text-main-light dark:text-text-main-dark shadow-sm ring-1 ring-inset ring-border-light dark:ring-border-dark placeholder:text-text-muted-light/50 dark:placeholder:text-text-muted-dark/50 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 transition-all" id="email" name="email" placeholder="ali@example.com" type="email"/>
+</div>
+</div>
+<!-- Phone Number Field -->
+<div class="group">
+<label class="mb-1.5 block text-sm font-semibold text-text-main-light dark:text-text-main-dark" for="phone">Phone Number</label>
+<div class="relative flex rounded-xl shadow-sm ring-1 ring-inset ring-border-light dark:ring-border-dark focus-within:ring-2 focus-within:ring-inset focus-within:ring-primary bg-surface-light dark:bg-surface-dark transition-all">
+<div class="flex items-center gap-2 border-r border-border-light dark:border-border-dark px-4 py-3.5 bg-gray-50/50 dark:bg-gray-800/20 rounded-l-xl">
+<!-- Bahrain Flag representation (simple circle) or icon -->
+<img alt="Bahrain" class="h-4 w-6 rounded-sm object-cover shadow-sm" data-alt="Bahrain Flag" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXSNLGobRnlWAZMzbaDr22AQUn5SxyhQFhSlaALwEgcQyJZNrJKDaWMUrB_wcTQcKukzop-EOJ7jepqxrirFUzmJt68Ev-DtcXqrgIOTEQt6WYQnSLFmm1m3zPRPPggSVm4ZYm120aZ5FWtRp4qKfPgDXnsFuVfswSjdnzKjgecyYCzlYZNqLfBLarPIuwTX2cb3GeEuTpgJwOJJ4adna_8LJzlEiWLf07lzVyKIZLQZm9G_l0-uQk40s7srqfx5yQBTYahPNmwB0"/>
+<span class="text-sm font-medium text-text-main-light dark:text-text-main-dark">+973</span>
+</div>
+<input class="block flex-1 rounded-r-xl border-0 bg-transparent py-3.5 pl-4 pr-4 text-text-main-light dark:text-text-main-dark placeholder:text-text-muted-light/50 dark:placeholder:text-text-muted-dark/50 focus:ring-0 sm:text-sm sm:leading-6" id="phone" name="phone" placeholder="3XXXXXXX" type="tel"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="group">
+<label class="mb-1.5 block text-sm font-semibold text-text-main-light dark:text-text-main-dark" for="password">Password</label>
+<div class="relative">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
+<span class="material-symbols-outlined text-text-muted-light/60 dark:text-text-muted-dark/60 text-[20px]">lock</span>
+</div>
+<input class="block w-full rounded-xl border-0 bg-surface-light dark:bg-surface-dark py-3.5 pl-11 pr-12 text-text-main-light dark:text-text-main-dark shadow-sm ring-1 ring-inset ring-border-light dark:ring-border-dark placeholder:text-text-muted-light/50 dark:placeholder:text-text-muted-dark/50 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 transition-all" id="password" name="password" placeholder="Min. 8 characters" type="password"/>
+<button class="absolute inset-y-0 right-0 flex items-center pr-4 text-text-muted-light dark:text-text-muted-dark hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility_off</span>
+</button>
+</div>
+</div>
+<!-- Terms and Policy Checkbox -->
+<div class="relative flex gap-x-3 pt-2">
+<div class="flex h-6 items-center">
+<input class="h-5 w-5 rounded border-border-light dark:border-border-dark text-primary focus:ring-primary bg-surface-light dark:bg-surface-dark" id="terms" name="terms" type="checkbox"/>
+</div>
+<div class="text-sm leading-6">
+<label class="font-medium text-text-muted-light dark:text-text-muted-dark" for="terms">I agree to the <a class="font-bold text-primary hover:underline" href="#">Terms of Service</a> and <a class="font-bold text-primary hover:underline" href="#">Privacy Policy</a>.</label>
+</div>
+</div>
+<!-- Action Button -->
+<div class="pt-4">
+<button class="flex w-full items-center justify-center rounded-xl bg-primary px-3 py-4 text-base font-bold leading-6 text-white shadow-lg shadow-primary/30 hover:bg-primary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-all active:scale-[0.98]" type="submit">
+                        Create Account
+                    </button>
+</div>
+</form>
+<!-- Footer Link -->
+<p class="mt-8 text-center text-sm text-text-muted-light dark:text-text-muted-dark">
+                Already have an account? 
+                <a class="font-bold text-primary hover:text-primary-dark transition-colors" href="#">Log in</a>
+</p>
+</div>
+</div>
+</body></html>
